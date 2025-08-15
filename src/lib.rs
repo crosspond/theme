@@ -1,6 +1,10 @@
 mod everforest;
 
-use ratatui::style::Color;
+use edtui::EditorStatusLine;
+use ratatui::{
+    style::{Color, Style, Stylize},
+    widgets::{Block, Padding},
+};
 
 #[allow(unused)]
 pub struct Theme {
@@ -49,5 +53,19 @@ impl Theme {
             self.cyan,
             self.orange,
         ]
+    }
+
+    pub fn editor_theme(&self) -> edtui::EditorTheme<'_> {
+        edtui::EditorTheme::default()
+            .block(Block::default().padding(Padding::uniform(1)))
+            .base(Style::default().bg(self.bg0).fg(self.fg))
+            .cursor_style(Style::default().bg(self.grey2).fg(self.bg_dim))
+            .selection_style(Style::default().bg(self.grey1).fg(self.bg_dim))
+            .status_line(
+                EditorStatusLine::default()
+                    .style_text(Style::default().bg(self.cyan).fg(self.bg_dim))
+                    .style_line(Style::default().bg(self.bg2).fg(self.fg))
+                    .align_left(true),
+            )
     }
 }
