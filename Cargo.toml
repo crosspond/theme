@@ -1,9 +1,9 @@
 [package]
 name = "crosspond_theme"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Themes for crosspond"
 license = "MIT"
 
 [dependencies]
-ratatui = { version = "0.30.0-alpha.5", features = ["palette"] }
+ratatui = { version = "0.29.0", features = ["palette"] }
