@@ -59,11 +59,11 @@ impl Theme {
         edtui::EditorTheme::default()
             .block(Block::default().padding(Padding::uniform(1)))
             .base(Style::default().bg(self.bg0).fg(self.fg))
-            .cursor_style(Style::default().bg(self.grey2).fg(self.bg_dim))
-            .selection_style(Style::default().bg(self.grey1).fg(self.bg_dim))
+            .cursor_style(Style::default().bg(self.fg).fg(self.bg_dim))
+            .selection_style(Style::default().bg(self.bg4).fg(self.fg))
             .status_line(
                 EditorStatusLine::default()
-                    .style_text(Style::default().bg(self.cyan).fg(self.bg_dim))
+                    .style_text(Style::default().bg(self.green).fg(self.bg_dim))
                     .style_line(Style::default().bg(self.bg2).fg(self.fg))
                     .align_left(true),
             )
