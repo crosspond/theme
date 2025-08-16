@@ -55,10 +55,10 @@ impl Theme {
         ]
     }
 
-    pub fn editor_theme(&self) -> edtui::EditorTheme<'_> {
+    pub fn editor_theme(&self, bg: Color) -> edtui::EditorTheme<'_> {
         edtui::EditorTheme::default()
             .block(Block::default().padding(Padding::uniform(1)))
-            .base(Style::default().bg(self.bg0).fg(self.fg))
+            .base(Style::default().bg(bg).fg(self.fg))
             .cursor_style(Style::default().bg(self.fg).fg(self.bg_dim))
             .selection_style(Style::default().bg(self.bg4).fg(self.fg))
             .status_line(

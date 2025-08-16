@@ -1,6 +1,6 @@
 [package]
 name = "crosspond_theme"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2024"
 description = "Themes for crosspond"
 license = "MIT"
